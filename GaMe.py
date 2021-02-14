@@ -8,6 +8,12 @@ displays = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("ABBYY's Car Game")
 clock = pygame.time.Clock()
 caring = pygame.image.load("images.jpeg")
+backgroundpic = pygame.image.load("images (1).jpeg")
+
+
+def background():
+    displays.blit(backgroundpic, (0,700))
+    displays.blit(backgroundpic, (700, 0))
 
 
 def car(x, y):
@@ -34,6 +40,7 @@ def game_loop():
             xchange = 0
         x += xchange
         displays.fill(grey)
+        background()
         car(x, y)
         pygame.display.update()
         clock.tick(60)
